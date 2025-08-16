@@ -38,7 +38,7 @@ query PositionsByOwner($owner: Bytes!, $first: Int!, $skip: Int!) {
       id
       feeTier
       tick
-      sqrtPriceX96
+      sqrtPrice
       token0 { id symbol decimals }
       token1 { id symbol decimals }
       liquidity

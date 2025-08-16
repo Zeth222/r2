@@ -15,7 +15,7 @@ async function startup() {
   msg += `Posições: ${enriched.length}`;
   for (const p of enriched) {
     const price = priceFromSqrtPrice(
-      p.pool.sqrtPriceX96,
+      p.pool.sqrtPrice,
       Number(p.pool.token0.decimals),
       Number(p.pool.token1.decimals)
     );

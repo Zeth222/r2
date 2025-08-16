@@ -28,8 +28,8 @@ export function evaluateSignals(
 
   const dayDatas = current.poolDayDatas;
   if (dayDatas.length >= 2) {
-    const price0 = Number(dayDatas[0].sqrtPriceX96);
-    const price1 = Number(dayDatas[1].sqrtPriceX96);
+    const price0 = Number(dayDatas[0].sqrtPrice);
+    const price1 = Number(dayDatas[1].sqrtPrice);
     const ret = ((price0 - price1) / price1) * 100;
     if (Math.abs(ret) >= cfg.PRICE_MOVE_ALERT_PCT) {
       alerts.push(`Variação 24h ${ret.toFixed(2)}%`);

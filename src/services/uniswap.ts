@@ -12,7 +12,7 @@ export interface PositionWithData {
     id: string;
     feeTier: string;
     tick: string;
-    sqrtPriceX96: string;
+    sqrtPrice: string;
     token0: { id: string; symbol: string; decimals: string };
     token1: { id: string; symbol: string; decimals: string };
   };
@@ -60,11 +60,11 @@ export async function enrichPosition(pos: PositionWithData): Promise<PositionMet
 }
 
 export function priceFromSqrtPrice(
-  sqrtPriceX96: string,
+  sqrtPrice: string,
   token0Decimals: number,
   token1Decimals: number
 ): number {
-  const sqrt = Number(sqrtPriceX96) / 2 ** 96;
+  const sqrt = Number(sqrtPrice) / 2 ** 96;
   const price = sqrt * sqrt * 10 ** (token0Decimals - token1Decimals);
   return price;
 }
