@@ -1,0 +1,28 @@
+{
+  "name": "uniswap-v3-arb-telegram-bot",
+  "version": "1.0.0",
+  "description": "Headless bot that monitors Uniswap v3 positions on Arbitrum via The Graph and sends alerts to Telegram",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "start": "node dist/index.js",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "graphql-request": "^7.0.1",
+    "dotenv": "^16.4.5",
+    "node-telegram-bot-api": "^0.61.0",
+    "p-retry": "^6.0.1",
+    "zod": "^3.22.4",
+    "dayjs": "^1.11.10",
+    "pino": "^9.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "tsx": "^4.7.1",
+    "tsup": "^8.0.1",
+    "@types/node": "^20.11.17"
+  }
+}
